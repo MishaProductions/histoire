@@ -461,9 +461,8 @@ namespace neptunebot
         {
             var result = new DiscordInteractionResponseBuilder();
 
-            if (userToRunCommand.User.Id != 480146132526170129)
-                if (userToRunCommand.User.Id != 531139663096840192)
-                {
+            if (userToRunCommand.User.Id != 480146132526170129 || userToRunCommand.User.Id != 531139663096840192)
+            {
                 result.AddEmbed(CreateEmbed("Access denied.", "You do not have the permission to run this command.", DiscordColor.Red));
                 await userToRunCommand.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, result);
                 return;
